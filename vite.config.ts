@@ -8,7 +8,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.tsx'],
-            // ssr: 'resources/js/ssr.tsx', // Komentari ini buat skip SSR
+            // ssr: 'resources/js/ssr.tsx', // Udah dikomentari buat skip SSR
             refresh: true,
         }),
         react(),
