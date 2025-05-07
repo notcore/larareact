@@ -1,17 +1,17 @@
 {
-    "version": 2,
-    "framework": null,
     "builds": [
-      { "src": "public/build/**/*", "use": "@vercel/static" },
-      { "src": "api/index.php", "use": "vercel-php@0.7.0" }
+      {
+        "src": "public/index.php",
+        "use": "@vercel/php",
+        "config": {
+          "buildCommand": "composer install --no-dev"
+        }
+      }
     ],
     "routes": [
-      { "src": "/build/(.*)", "dest": "/public/build/$1" },
-      { "src": "/(.*)", "dest": "/api/index.php" }
-    ],
-    "env": {
-      "APP_ENV": "production",
-      "APP_DEBUG": "false",
-      "APP_URL": "https://your-app.vercel.app"
-    }
+      {
+        "src": "/(.*)",
+        "dest": "public/index.php"
+      }
+    ]
   }
